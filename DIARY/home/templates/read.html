@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block bodyy %}{% endblock bodyy %}
+
+
+{% block content %}
+<div class="container" style="padding:1%;">
+    <h1>My Diary Entries</h1>
+    {% if user_entries %}
+        <ul>
+            {% for entry in user_entries %}
+                <li>
+                    <h2>{{ entry.title }}</h2>
+                    <p>{{ entry.content }}</p>
+                    <p>Created on {{ entry.date_created }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You haven't created any diary entries yet.</p>
+    {% endif %}
+</div> 
+{% endblock %}
+
